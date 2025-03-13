@@ -8,8 +8,18 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   message: string = "Hello from BridgeLabz";
+  logoUrl: string = "BLlogo.jpg";
+  websiteUrl: string = "https://www.bridgelabz.com"; // Website URL
+
+  openBridgeLabz(): void {
+    window.open(this.websiteUrl, "_blank"); // Opens the website in a new tab
+  }
+
+
+  message: string = "Hello from BridgeLabz";
   logoUrl: string = "BLlogo.jpg"; // Logo URL
 
   message: string = "Hello from BridgeLabz"; // Data Binding with Interpolation
+
 
 }
