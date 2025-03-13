@@ -1,4 +1,9 @@
 
+<h1>{{ message }} {{ userName }}</h1>
+
+<!-- Input field with two-way binding -->
+<input type="text" [(ngModel)]="userName" placeholder="Enter your name">
+
 <h1>{{ message }}</h1>
 
 <!-- Property Binding for Logo + Event Binding for Click -->
@@ -9,5 +14,4 @@
 <img [src]="logoUrl" alt="BridgeLabz Logo" width="200">
 
 <h1>{{ message }}</h1>
-
 
