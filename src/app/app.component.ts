@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'HelloWorldApp';
+  message: string = "Hello from BridgeLabz";
+  logoUrl: string = "BLlogo.jpg";
+  websiteUrl: string = "https://www.bridgelabz.com"; // Website URL
+
+  openBridgeLabz(): void {
+    window.open(this.websiteUrl, "_blank"); // Opens the website in a new tab
+  }
 }
