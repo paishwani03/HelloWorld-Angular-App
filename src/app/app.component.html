@@ -1,1 +1,18 @@
-<h1>Hello from BridgeLabz</h1>
+<h1>Final Hello world App</h1>
+
+<!-- Without Error Section -->
+<div style="display: inline-block; width: 45%; text-align: center;">
+  <h2 *ngIf="!errorMessage">Hello {{ userName }} from BridgeLabz</h2>
+  <img src="BLlogo.jpg" alt="BridgeLabz Logo" width="200">
+  <br>
+  <input type="text" (input)="validateName($event)" placeholder="Enter your name">
+</div>
+
+<!-- With Error Section -->
+<div style="display: inline-block; width: 45%; text-align: center;">
+  <h2 *ngIf="errorMessage">Hello {{ userName }} from BridgeLabz</h2>
+  <img src="BLlogo.jpg" alt="BridgeLabz Logo" width="200">
+  <br>
+  <input type="text" (input)="validateName($event)" placeholder="Enter your name">
+  <p *ngIf="errorMessage" style="color: red; font-style: italic;">{{ errorMessage }}</p>
+</div>

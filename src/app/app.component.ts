@@ -1,12 +1,29 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [CommonModule, FormsModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'HelloWorldApp';
+  message: string = "Hello from BridgeLabz";
+  userName: string = "";
+  errorMessage: string = "";
+
+  validateName(event: Event) {
+    const input = (event.target as HTMLInputElement).value;
+    const namePattern = /^[A-Z][a-zA-Z]{2,}$/; // Must start with capital & be at least 3 letters
+
+    if (namePattern.test(input)) {
+      this.userName = input;
+      this.errorMessage = "";
+    } else {
+      this.userName = input;
+      this.errorMessage = "Name is incorrect!";
+    }
+  }
 }
